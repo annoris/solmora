@@ -1,0 +1,932 @@
+/* SOLMORA base design system, typography, layout, and core sections. */
+
+:root {
+  --cream: #fdf3eb;
+  --sand: #f3e5d6;
+  --orange: #e94e1b;
+  --wine: #762530;
+  --yellow: #f39200;
+  --serif: 'Italiana', 'Bodoni MT', Didot, serif;
+  --sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--wine);
+  font: 16px/1.45 var(--sans);
+  overflow-x: hidden;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+  border: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+h2,
+h3 {
+  font-family: var(--serif);
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+em {
+  font-style: normal;
+}
+
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--wine);
+  outline-offset: 6px;
+  box-shadow: 0 0 0 4px var(--cream);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 20px;
+  background: var(--wine);
+  color: var(--cream);
+  z-index: 100;
+  padding: 14px 20px;
+  transform: translateY(-130%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.tiny-label {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  display: block;
+}
+
+.display-title {
+  font-size: clamp(65px, 8vw, 125px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.display-title em {
+  color: var(--orange);
+}
+
+.section-pad {
+  padding: 110px 6%;
+}
+
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.small-flower {
+  font-size: 50px;
+}
+
+/* Header and full-screen menu */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  height: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 25px 3.4%;
+}
+
+.site-header > .brand {
+  position: absolute;
+  left: 50%;
+  top: 25px;
+  transform: translateX(-50%);
+  width: 150px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: 1;
+  text-align: center;
+}
+
+.brand svg {
+  width: 104px;
+  height: 48px;
+  margin-bottom: -4px;
+}
+
+.brand > span {
+  font-family: var(--serif);
+  font-size: 46px;
+  letter-spacing: -0.055em;
+}
+
+.brand small {
+  font-size: 8px;
+  letter-spacing: 0.17em;
+  margin-top: 9px;
+  white-space: nowrap;
+}
+
+.header-right {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.language {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  background: transparent;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.language:hover {
+  background: var(--wine);
+  color: var(--cream);
+  border-color: var(--wine);
+}
+
+#menu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.menu-word {
+  border: 1px solid currentColor;
+  border-radius: 30px;
+  padding: 9px 24px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.menu-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-left: 4px;
+  background: var(--orange);
+  display: grid;
+  place-items: center;
+  color: var(--cream);
+}
+
+.menu-icon i:first-child {
+  display: block;
+  width: 7px;
+  height: 7px;
+  background: currentColor;
+  rotate: 45deg;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon i:last-child {
+  display: none;
+}
+
+.menu-open .menu-icon i:first-child {
+  transform: rotate(45deg);
+}
+
+.site-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+  background: var(--wine);
+  color: var(--cream);
+  padding: 15vh 9% 5vh;
+}
+
+.site-menu:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.menu-inner a {
+  font-family: var(--serif);
+  font-size: clamp(46px, 6.5vw, 100px);
+  line-height: 1.05;
+  transition: color 0.2s ease, transform 0.4s ease;
+}
+
+.menu-inner a:hover {
+  color: #f5a34a;
+  transform: translateX(15px);
+}
+
+.menu-tagline {
+  font-size: 14px;
+  position: absolute;
+  bottom: 35px;
+  left: 3.4%;
+}
+
+.menu-open {
+  overflow: hidden;
+}
+
+.menu-open .site-header {
+  color: var(--cream);
+  position: fixed;
+}
+
+.menu-open .language:hover {
+  background: var(--cream);
+  color: var(--wine);
+  border-color: var(--cream);
+}
+
+/* Base hero frame */
+.hero {
+  height: 100svh;
+  min-height: 760px;
+  max-height: 1250px;
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+  isolation: isolate;
+}
+
+/* Pantry collection */
+.pantry {
+  padding-top: 76px;
+}
+
+.pantry .display-title {
+  margin-top: 24px;
+  max-width: 880px;
+}
+
+.pantry-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  max-width: 750px;
+  margin: 28px 0 42px auto;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.pantry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px 50px;
+}
+
+.product-card {
+  background: none;
+  text-align: left;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-art {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.card-type {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  margin-top: 10px;
+}
+
+.product-card strong {
+  font: 400 clamp(27px, 2.5vw, 35px) / 1.15 var(--serif);
+  margin: 7px 0;
+}
+
+.product-card > span:last-child {
+  font-size: 13px;
+}
+
+.pantry-grid > .product-card:nth-child(2) {
+  margin-top: 80px;
+}
+
+.pantry-grid > .product-card:nth-child(3) {
+  margin-top: 160px;
+}
+
+.pantry-grid > .product-card:nth-child(4) {
+  grid-column: 2;
+  margin-top: -80px;
+}
+
+/* Orchard story */
+.orchard {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 10%;
+  background: var(--sand);
+  align-items: center;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.orchard-art {
+  position: relative;
+  transform: rotate(-3deg);
+}
+
+.image-caption {
+  display: block;
+  font-size: 10px;
+  margin-top: 16px;
+  font-style: italic;
+}
+
+.orchard-copy .display-title {
+  font-size: clamp(60px, 7vw, 105px);
+  margin: 35px 0;
+}
+
+.orchard-copy > p {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 390px;
+  margin-top: 20px;
+}
+
+.text-link {
+  border-bottom: 1px solid;
+  display: inline-block;
+  margin-top: 35px;
+  font-size: 14px;
+  padding-bottom: 4px;
+}
+
+/* Slow marquee banner */
+.slow-banner {
+  background: var(--orange);
+  color: var(--cream);
+  overflow: hidden;
+  padding: 25px 0;
+}
+
+.slow-track {
+  display: flex;
+  width: max-content;
+  font-family: var(--serif);
+  font-size: clamp(60px, 8vw, 120px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.slow-track span {
+  white-space: nowrap;
+  padding-right: 30px;
+}
+
+/* Little rituals */
+.ritual-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 30px;
+}
+
+.ritual-heading > .tiny-label {
+  max-width: 180px;
+  padding-top: 10px;
+}
+
+.ritual-heading .display-title {
+  font-size: clamp(60px, 7vw, 110px);
+  min-width: 60%;
+}
+
+.ritual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  margin-top: 80px;
+}
+
+.ritual-grid > article:nth-child(2) {
+  margin-top: 150px;
+}
+
+.ritual-art {
+  height: 470px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+  border-radius: 3px;
+}
+
+.ritual-grid h3 {
+  font-size: 43px;
+  line-height: 1.05;
+  margin: 15px 0 20px;
+  letter-spacing: -0.02em;
+}
+
+.ritual-grid p {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 380px;
+}
+
+/* Contact and footer */
+.contact {
+  padding-top: 100px;
+  background: var(--wine);
+  color: var(--cream);
+  text-align: center;
+}
+
+.contact .display-title {
+  font-size: clamp(65px, 8vw, 125px);
+  margin-top: 35px;
+}
+
+.contact .display-title em {
+  color: #f8a14e;
+}
+
+.contact-button {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(253, 243, 235, 0.5);
+  border-radius: 50%;
+  height: 110px;
+  width: 110px;
+  margin-top: 40px;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.4s ease;
+}
+
+.contact-button:hover {
+  background: var(--orange);
+  transform: rotate(-10deg);
+}
+
+footer {
+  margin-top: 100px;
+  border-top: 1px solid rgba(253, 243, 235, 0.27);
+  padding-top: 45px;
+}
+
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 100px;
+  letter-spacing: -0.06em;
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(253, 243, 235, 0.2);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-top: 60px;
+  padding-top: 25px;
+  font-size: 10px;
+}
+
+.footer-bottom button {
+  background: none;
+  font-size: 10px;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(253, 243, 235, 0.45);
+}
+
+/* Base modal and privacy dialog */
+dialog {
+  background: var(--cream);
+  color: var(--wine);
+  border: 0;
+  padding: 65px 45px 45px;
+  border-radius: 4px;
+  max-width: 640px;
+  width: 90%;
+  box-shadow: 0 25px 100px rgba(51, 22, 22, 0.35);
+}
+
+dialog::backdrop {
+  background: rgba(69, 29, 34, 0.54);
+  backdrop-filter: blur(5px);
+}
+
+.dialog-close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  background: none;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 13px;
+  padding: 5px;
+}
+
+.dialog-close span:last-child {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.privacy-content {
+  max-width: 560px;
+}
+
+.privacy-content h2 {
+  font-size: 65px;
+  margin: 20px 0;
+}
+
+.privacy-content p {
+  margin: 15px 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1000px) {
+  .hero {
+    min-height: 760px;
+  }
+
+  .section-pad {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .pantry-grid {
+    gap: 40px 25px;
+  }
+
+  .pantry-grid > .product-card:nth-child(2) {
+    margin-top: 60px;
+  }
+
+  .pantry-grid > .product-card:nth-child(3) {
+    margin-top: 120px;
+  }
+
+  .pantry-grid > .product-card:nth-child(4) {
+    margin-top: -60px;
+  }
+
+  .pantry-intro {
+    max-width: 650px;
+    gap: 40px;
+  }
+
+  .orchard {
+    gap: 7%;
+  }
+
+  .orchard-copy .display-title {
+    font-size: 8vw;
+  }
+
+  .ritual-art {
+    height: 360px;
+  }
+
+  .ritual-grid {
+    gap: 6%;
+  }
+
+  .ritual-grid h3 {
+    font-size: 36px;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 650px) {
+  .site-header {
+    padding: 18px 6%;
+    height: 120px;
+  }
+
+  .site-header > .brand {
+    width: 110px;
+    top: 22px;
+  }
+
+  .brand svg {
+    width: 65px;
+    height: 35px;
+  }
+
+  .brand > span {
+    font-size: 34px;
+  }
+
+  .brand small {
+    font-size: 6px;
+    margin-top: 7px;
+  }
+
+  .header-right {
+    padding-top: 8px;
+  }
+
+  .language {
+    width: 36px;
+    height: 36px;
+    font-size: 10px;
+  }
+
+  .menu-word {
+    font-size: 10px;
+    padding: 8px 15px;
+  }
+
+  .menu-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .menu-inner a {
+    font-size: 58px;
+  }
+
+  .menu-tagline {
+    left: 6%;
+    font-size: 12px;
+  }
+
+  .hero {
+    height: 100svh;
+    min-height: 740px;
+    max-height: 1050px;
+  }
+
+  .section-pad {
+    padding: 75px 6%;
+  }
+
+  .display-title {
+    font-size: 17vw;
+  }
+
+  .tiny-label {
+    font-size: 10px;
+  }
+
+  .small-flower {
+    font-size: 40px;
+  }
+
+  .pantry .display-title {
+    margin-top: 30px;
+  }
+
+  .pantry-intro {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin: 30px 0 45px;
+    font-size: 16px;
+  }
+
+  .pantry-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 15px;
+  }
+
+  .pantry-grid > .product-card:nth-child(n) {
+    margin-top: 0;
+    grid-column: auto;
+  }
+
+  .pantry-grid > .product-card:nth-child(even) {
+    margin-top: 45px;
+  }
+
+  .card-type {
+    font-size: 8px;
+    margin-top: 12px;
+  }
+
+  .product-card strong {
+    font-size: 27px;
+    line-height: 1;
+  }
+
+  .product-card > span:last-child {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .orchard {
+    grid-template-columns: 1fr;
+    gap: 65px;
+  }
+
+  .orchard-art {
+    max-width: 85%;
+    margin: auto;
+  }
+
+  .image-caption {
+    font-size: 9px;
+    line-height: 1.5;
+  }
+
+  .orchard-copy .display-title {
+    font-size: 18vw;
+    margin: 25px 0;
+  }
+
+  .orchard-copy > p {
+    font-size: 16px;
+    max-width: none;
+  }
+
+  .text-link {
+    font-size: 13px;
+  }
+
+  .slow-banner {
+    padding: 20px 0;
+  }
+
+  .slow-track {
+    font-size: 65px;
+  }
+
+  .ritual-heading {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .ritual-heading > .tiny-label {
+    max-width: none;
+  }
+
+  .ritual-heading .display-title {
+    font-size: 17vw;
+  }
+
+  .ritual-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin-top: 45px;
+  }
+
+  .ritual-grid > article:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .ritual-art {
+    height: 380px;
+  }
+
+  .ritual-grid h3 {
+    font-size: 40px;
+  }
+
+  .ritual-grid p {
+    font-size: 15px;
+  }
+
+  .contact .display-title {
+    font-size: 16vw;
+  }
+
+  .contact-button {
+    width: 100px;
+    height: 100px;
+    font-size: 13px;
+  }
+
+  .footer-logo {
+    font-size: 83px;
+  }
+
+  footer {
+    margin-top: 70px;
+    padding-top: 35px;
+  }
+
+  .footer-links {
+    gap: 22px;
+    font-size: 11px;
+  }
+
+  .footer-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 9px;
+    gap: 18px;
+    margin-top: 40px;
+  }
+
+  .footer-bottom button {
+    font-size: 10px;
+  }
+
+  dialog {
+    padding: 55px 25px 30px;
+    width: 92%;
+  }
+
+  .privacy-content h2 {
+    font-size: 50px;
+  }
+
+  .privacy-content p {
+    font-size: 15px;
+  }
+}

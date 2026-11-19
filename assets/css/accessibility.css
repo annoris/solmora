@@ -1,0 +1,138 @@
+/* Keep the editorial composition usable with touch, keyboards, and compact viewports. */
+
+#lang-toggle,
+#menu-toggle,
+#orbit-prev,
+#orbit-next,
+#dialog-prev,
+#dialog-next,
+.dialog-close,
+#privacy-button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+footer a {
+  padding-block: 0.5rem;
+}
+
+.orbit-controls button,
+.detail-nav button,
+.dialog-close,
+#privacy-button {
+  font-size: 0.875rem;
+}
+
+/* High-contrast focus rings across dark burgundy surfaces */
+#site-menu:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.menu-open #lang-toggle:focus-visible,
+.menu-open #menu-toggle:focus-visible,
+.site-menu a:focus-visible,
+.scroll-prompt:focus-visible,
+.contact a:focus-visible,
+.contact button:focus-visible {
+  outline-color: var(--cream);
+  box-shadow: 0 0 0 4px var(--wine);
+}
+
+@media (max-width: 650px) {
+  .orbit-controls button:focus-visible {
+    outline-color: var(--cream);
+    box-shadow: 0 0 0 4px var(--wine);
+  }
+}
+
+/* Scroll containment while modal dialogs are open */
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+dialog:not(.product-detail) {
+  max-height: calc(100svh - 2rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.contact-message,
+.ritual-grid p {
+  font-size: 1rem;
+}
+
+.product-card > span:last-child {
+  font-size: 0.875rem;
+}
+
+.product-card,
+.privacy-content {
+  min-width: 0;
+}
+
+.hero-product h2 {
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 651px) {
+  .is-orbit-ready .jar-item {
+    top: 54%;
+  }
+}
+
+/* Narrow phone safety */
+@media (max-width: 360px) {
+  .site-header {
+    padding-inline: 5%;
+  }
+
+  .hero-product {
+    max-width: 160px;
+  }
+
+  .hero-product h2 {
+    font-size: 24px;
+  }
+
+  .pantry-grid {
+    gap: 35px 14px;
+  }
+
+  .product-card strong {
+    font-size: 1.5rem;
+  }
+
+  .menu-inner a {
+    font-size: 3rem;
+  }
+}
+
+/* Short viewport safety */
+@media (max-height: 560px) {
+  .site-menu {
+    overflow-y: auto;
+    padding-block: 105px 60px;
+  }
+
+  .site-menu:not([hidden]) {
+    justify-content: flex-start;
+  }
+
+  .menu-inner a {
+    font-size: clamp(2rem, 7vh, 3.5rem);
+  }
+
+  .menu-tagline {
+    position: static;
+    margin-top: 24px;
+  }
+
+  .hero {
+    min-height: 560px;
+  }
+
+  .detail-hero {
+    min-height: 560px;
+  }
+}

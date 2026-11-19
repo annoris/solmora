@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fdf3eb">
+  <title>Solmora — A little sun, preserved.</title>
+  <meta name="description" content="Step into Solmora, a sunlit Mediterranean pantry. Explore our fictional collection of orchard marmalades, preserves and bright little rituals.">
+  <meta property="og:title" content="Solmora — A little sun, preserved.">
+  <meta property="og:description" content="Step into Solmora, a sunlit Mediterranean pantry. Explore our fictional collection of orchard marmalades, preserves and bright little rituals.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="docs/screenshots/01-hero-orbit.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/art-direction.css">
+  <link rel="stylesheet" href="assets/css/motion.css">
+  <link rel="stylesheet" href="assets/css/accessibility.css">
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/motion.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="site-header">
+    <a href="#home" class="brand" aria-label="Solmora home" data-i18n-aria="brandAria">
+      <svg viewBox="0 0 150 62" aria-hidden="true">
+        <path d="M72 39Q75 12 104 8Q104 32 78 36M75 36Q47 34 43 11Q70 13 75 36" fill="none" stroke="currentColor" stroke-width="1.3"/>
+        <circle cx="75" cy="35" r="13" fill="none" stroke="currentColor" stroke-width="1.3"/>
+        <path d="M75 22v26M62 35h26M66 26l18 18M66 44l18-18" stroke="currentColor" stroke-width=".6"/>
+      </svg>
+      <span>solmora</span>
+      <small data-i18n="brandTag">ORCHARD &amp; PANTRY</small>
+    </a>
+    <div class="header-right">
+      <button id="lang-toggle" class="language" type="button" aria-label="Switch language to Spanish">EN</button>
+      <button id="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">
+        <span class="menu-word">menu</span>
+        <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="site-menu" class="site-menu" aria-label="Main navigation" tabindex="-1" hidden>
+    <div class="menu-inner">
+      <a href="#home" data-i18n="navHome">Home</a>
+      <a href="#pantry" data-i18n="navPantry">The pantry</a>
+      <a href="#orchard" data-i18n="navOrchard">Our orchard</a>
+      <a href="#rituals" data-i18n="navRituals">Little rituals</a>
+      <a href="#contact" data-i18n="navContact">Say hello</a>
+    </div>
+    <p class="menu-tagline" data-i18n="tagline">A little sun, preserved.</p>
+  </nav>
+
+  <main id="main">
+    <section id="home" class="hero">
+      <h1 class="visually-hidden" data-i18n="heroHeading">Solmora: orchard marmalades and Mediterranean preserves</h1>
+
+      <svg class="orbit-seal" viewBox="0 0 700 700" aria-hidden="true">
+        <defs>
+          <path id="seal-path" d="M350,350m-295,0a295,295 0 1,1 590,0a295,295 0 1,1 -590,0"/>
+        </defs>
+        <text>
+          <textPath id="seal-text" href="#seal-path" textLength="1830">A LITTLE SUN, PRESERVED. · THE ORCHARD COLLECTION. · </textPath>
+        </text>
+      </svg>
+
+      <div class="hero-shape" aria-hidden="true">
+        <svg viewBox="0 0 1400 800" preserveAspectRatio="none">
+          <path d="M0 800C-30 705 100 531 239 353C344 216 503 180 681 100C800 44 1012 132 1131 263C1242 385 1367 616 1400 800Z" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <div class="orbit-wrap">
+        <div class="jar-orbit" aria-label="Explore the preserves" data-i18n-aria="orbitAria" role="group" tabindex="0">
+          <button class="jar-item" type="button" data-product="0" aria-label="Discover golden orange marmalade">
+            <span class="jar product-asset">
+              <img class="product-cutout" src="assets/images/jar-orange.png" alt="" draggable="false" width="1217" height="1292" decoding="async" fetchpriority="high">
+            </span>
+          </button>
+          <button class="jar-item" type="button" data-product="1" aria-label="Discover lemon and vanilla preserve">
+            <span class="jar product-asset">
+              <img class="product-cutout" src="assets/images/jar-lemon.png" alt="" draggable="false" width="1176" height="1338" decoding="async" fetchpriority="high">
+            </span>
+          </button>
+          <button class="jar-item" type="button" data-product="2" aria-label="Discover wild fig preserve">
+            <span class="jar product-asset">
+              <img class="product-cutout" src="assets/images/jar-fig.png" alt="" draggable="false" width="1184" height="1328" decoding="async" fetchpriority="high">
+            </span>
+          </button>
+          <button class="jar-item" type="button" data-product="3" aria-label="Discover blood orange marmalade">
+            <span class="jar product-asset">
+              <img class="product-cutout" src="assets/images/jar-blood-orange.png" alt="" draggable="false" width="1199" height="1312" decoding="async" fetchpriority="high">
+            </span>
+          </button>
+          <button class="jar-item" type="button" data-product="4" aria-label="Discover apricot and rosemary preserve">
+            <span class="jar product-asset">
+              <img class="product-cutout" src="assets/images/jar-apricot.png" alt="" draggable="false" width="1199" height="1312" decoding="async" fetchpriority="high">
+            </span>
+          </button>
+          <button class="jar-item" type="button" data-product="0" aria-label="Discover golden orange marmalade">
+            <span class="jar product-asset">
+              <img class="product-cutout" src="assets/images/jar-orange.png" alt="" draggable="false" width="1217" height="1292" decoding="async">
+            </span>
+          </button>
+          <button class="jar-item" type="button" data-product="1" aria-label="Discover lemon and vanilla preserve">
+            <span class="jar product-asset">
+              <img class="product-cutout" src="assets/images/jar-lemon.png" alt="" draggable="false" width="1176" height="1338" decoding="async">
+            </span>
+          </button>
+          <button class="jar-item" type="button" data-product="2" aria-label="Discover wild fig preserve">
+            <span class="jar product-asset">
+              <img class="product-cutout" src="assets/images/jar-fig.png" alt="" draggable="false" width="1184" height="1328" decoding="async">
+            </span>
+          </button>
+          <button class="jar-item" type="button" data-product="3" aria-label="Discover blood orange marmalade">
+            <span class="jar product-asset">
+              <img class="product-cutout" src="assets/images/jar-blood-orange.png" alt="" draggable="false" width="1199" height="1312" decoding="async">
+            </span>
+          </button>
+          <button class="jar-item" type="button" data-product="4" aria-label="Discover apricot and rosemary preserve">
+            <span class="jar product-asset">
+              <img class="product-cutout" src="assets/images/jar-apricot.png" alt="" draggable="false" width="1199" height="1312" decoding="async">
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-product">
+        <span class="tiny-label" data-i18n="heroExplore">EXPLORE THE COLLECTION</span>
+        <h2 id="product-title">Golden orange</h2>
+        <p id="product-subtitle">Bright peel. Slow mornings. Pure sunshine.</p>
+      </div>
+
+      <div class="orbit-controls">
+        <button id="orbit-prev" type="button" aria-label="Previous preserve" data-i18n="prev">prev</button>
+        <span class="control-line" aria-hidden="true"></span>
+        <button id="orbit-next" type="button" aria-label="Next preserve" data-i18n="next">next</button>
+      </div>
+
+      <a href="#pantry" class="scroll-prompt" data-i18n="scrollPrompt">Scroll to discover</a>
+    </section>
+
+    <section id="pantry" class="pantry section-pad">
+      <div class="section-top">
+        <span class="tiny-label" data-reveal data-i18n="pantryEyebrow">A PANTRY FULL OF POSSIBILITIES</span>
+        <span class="small-flower" aria-hidden="true">✳</span>
+      </div>
+      <h2 class="display-title" data-reveal data-i18n-html="pantryTitle">Good things.<br><em>In good time.</em></h2>
+      <div class="pantry-intro">
+        <p data-reveal data-i18n="pantryP1">Some things are too good to rush. A ripe piece of fruit. A long breakfast. That last spoonful, straight from the jar.</p>
+        <p data-reveal data-i18n="pantryP2">Meet our little collection of orchard-inspired marmalades and preserves. Five bright personalities. Endless delicious possibilities.</p>
+      </div>
+      <div class="pantry-grid">
+        <button class="product-card" type="button" data-open-product="0">
+          <span class="card-art orange">
+            <img src="assets/images/jar-orange.png" alt="Studio photograph of a glass jar of Solmora Golden orange marmalade" width="1217" height="1292" decoding="async">
+            <span class="card-orbit" aria-hidden="true"></span>
+          </span>
+          <span class="card-type">MARMALADE</span>
+          <strong>Golden orange</strong>
+          <span>Our sunny side.</span>
+        </button>
+        <button class="product-card" type="button" data-open-product="1">
+          <span class="card-art lemon">
+            <img src="assets/images/jar-lemon.png" alt="Studio photograph of a glass jar of Solmora Lemon and vanilla preserve" width="1176" height="1338" decoding="async">
+            <span class="card-orbit" aria-hidden="true"></span>
+          </span>
+          <span class="card-type">PRESERVE</span>
+          <strong>Lemon &amp; vanilla</strong>
+          <span>A softer kind of zing.</span>
+        </button>
+        <button class="product-card" type="button" data-open-product="2">
+          <span class="card-art fig">
+            <img src="assets/images/jar-fig.png" alt="Studio photograph of a glass jar of Solmora Wild fig preserve" width="1184" height="1328" decoding="async">
+            <span class="card-orbit" aria-hidden="true"></span>
+          </span>
+          <span class="card-type">PRESERVE</span>
+          <strong>Wild fig</strong>
+          <span>Deeply, deliciously mellow.</span>
+        </button>
+        <button class="product-card" type="button" data-open-product="3">
+          <span class="card-art blood">
+            <img src="assets/images/jar-blood-orange.png" alt="Studio photograph of a glass jar of Solmora Blood orange marmalade" width="1199" height="1312" decoding="async">
+            <span class="card-orbit" aria-hidden="true"></span>
+          </span>
+          <span class="card-type">MARMALADE</span>
+          <strong>Blood orange</strong>
+          <span>A beautiful little bittersweet.</span>
+        </button>
+        <button class="product-card" type="button" data-open-product="4">
+          <span class="card-art apricot">
+            <img src="assets/images/jar-apricot.png" alt="Studio photograph of a glass jar of Solmora Apricot and rosemary preserve" width="1199" height="1312" decoding="async">
+            <span class="card-orbit" aria-hidden="true"></span>
+          </span>
+          <span class="card-type">PRESERVE</span>
+          <strong>Apricot &amp; rosemary</strong>
+          <span>Summer, with a wild streak.</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="orchard" class="orchard section-pad">
+      <div class="orchard-art" data-parallax="0.08">
+        <img src="assets/images/orchard-editorial.png" alt="Sunlit Mediterranean orange orchard in warm afternoon light" width="1122" height="1402" loading="lazy" decoding="async">
+        <span class="image-caption" data-i18n="orchardCaption">A sunlit vision of the Mediterranean. Original concept imagery.</span>
+      </div>
+      <div class="orchard-copy">
+        <span class="tiny-label" data-reveal data-i18n="orchardEyebrow">THE SPIRIT OF THE ORCHARD</span>
+        <h2 class="display-title" data-reveal data-i18n-html="orchardTitle">A slower<br>kind of<br><em>beautiful.</em></h2>
+        <p data-reveal data-i18n="orchardP1">There’s a rhythm to an orchard. A season for growing. A moment for picking. A quiet kind of magic in letting nature take its time.</p>
+        <p data-reveal data-i18n="orchardP2">Solmora is a fictional pantry built around that feeling: thoughtful ingredients, generous tables, and the pleasure of something simple, made special.</p>
+        <a class="text-link" href="#rituals" data-i18n="orchardLink">Find your little ritual</a>
+      </div>
+    </section>
+
+    <section class="slow-banner" aria-label="A little sun, preserved" data-i18n-aria="marqueeAria">
+      <div class="slow-track" aria-hidden="true">
+        <span data-i18n="marqueePhrase">A little sun, preserved. ✳ </span>
+        <span data-i18n="marqueePhrase">A little sun, preserved. ✳ </span>
+        <span data-i18n="marqueePhrase">A little sun, preserved. ✳ </span>
+        <span data-i18n="marqueePhrase">A little sun, preserved. ✳ </span>
+      </div>
+    </section>
+
+    <section id="rituals" class="rituals section-pad">
+      <div class="ritual-heading">
+        <span class="tiny-label" data-reveal data-i18n="ritualsEyebrow">THE EVERYDAY, A LITTLE SWEETER</span>
+        <h2 class="display-title" data-reveal data-i18n-html="ritualsTitle">Make room<br>for <em>the good.</em></h2>
+      </div>
+      <div class="ritual-grid">
+        <article data-reveal>
+          <div class="ritual-art breakfast">
+            <img src="assets/images/breakfast-editorial.png" alt="Orange marmalade on warm sourdough toast with espresso in soft morning light" width="1122" height="1402" loading="lazy" decoding="async">
+          </div>
+          <span class="tiny-label" data-i18n="ritual1Eyebrow">THE SLOW MORNING</span>
+          <h3 data-i18n-html="ritual1Title">Toast. Coffee.<br>Absolutely no hurry.</h3>
+          <p data-i18n="ritual1Body">Golden orange, warm sourdough, a sunny spot by the window. A very good place to start.</p>
+        </article>
+        <article data-reveal>
+          <div class="ritual-art gathering">
+            <img src="assets/images/cheeseboard-editorial.png" alt="Artisan cheeses, fresh cut figs, crackers, walnuts and fig preserve on a rustic wooden board" width="1122" height="1402" loading="lazy" decoding="async">
+          </div>
+          <span class="tiny-label" data-i18n="ritual2Eyebrow">THE LONG TABLE</span>
+          <h3 data-i18n-html="ritual2Title">A little more.<br>For everyone.</h3>
+          <p data-i18n="ritual2Body">Wild fig, a favorite cheese, and friends who stay for one more story. Leave the good stuff out.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section-pad">
+      <span class="tiny-label" data-reveal data-i18n="contactEyebrow">GOOD THINGS START WITH A HELLO</span>
+      <h2 class="display-title" data-reveal data-i18n-html="contactTitle">Shall we share<br><em>some sunshine?</em></h2>
+      <button class="contact-button" id="contact-button" type="button" aria-expanded="false" aria-controls="contact-message" data-i18n="contactButton">Say hello</button>
+      <div id="contact-message" class="contact-message" hidden role="status">
+        <span class="tiny-label" data-i18n="contactNoticeEyebrow">CONCEPT NOTE</span>
+        <p data-i18n="contactMessage">Hello, sunshine! Solmora is an independent concept project. This demo doesn’t send messages or take orders.</p>
+      </div>
+
+      <footer>
+        <a href="#home" class="footer-logo">solmora</a>
+        <div class="footer-links">
+          <a href="#pantry" data-i18n="navPantry">The pantry</a>
+          <a href="#orchard" data-i18n="navOrchard">Our orchard</a>
+          <a href="#rituals" data-i18n="navRituals">Little rituals</a>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="year">2026</span> <span data-i18n="footerCopy">Solmora. A concept, thoughtfully made.</span></span>
+          <button id="privacy-button" type="button" data-i18n="privacyBtn">Privacy &amp; cookies</button>
+          <span data-i18n="footerNote">No store. Just a little inspiration.</span>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <dialog id="product-dialog" class="product-detail" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" aria-label="Close product details">
+      <span class="dialog-close-label" data-i18n="dialogClose">back to the pantry</span>
+      <span aria-hidden="true">×</span>
+    </button>
+
+    <section class="detail-hero">
+      <span class="detail-brand">solmora</span>
+      <h2 id="dialog-title">Golden orange</h2>
+      <div class="detail-product">
+        <img id="dialog-fruit" src="assets/images/jar-orange.png" alt="Golden orange preserve jar" width="1217" height="1292" decoding="async">
+      </div>
+      <div class="detail-meta">
+        <span id="dialog-type">ORCHARD MARMALADE</span>
+        <span data-i18n="taglineUpper">A LITTLE SUN, PRESERVED.</span>
+        <span id="dialog-collection">THE SOLMORA COLLECTION</span>
+      </div>
+      <div class="detail-nav" aria-label="Browse preserves" data-i18n-aria="dialogNavAria">
+        <button id="dialog-prev" type="button" aria-label="Previous preserve" data-i18n="prev">prev</button>
+        <span class="control-line" aria-hidden="true"></span>
+        <button id="dialog-next" type="button" aria-label="Next preserve" data-i18n="next">next</button>
+      </div>
+      <span class="detail-scroll" data-i18n="detailScroll">Made for slow discovery</span>
+    </section>
+
+    <section class="detail-story">
+      <span class="detail-diamond" aria-hidden="true">◇</span>
+      <p id="dialog-description"></p>
+      <span class="tiny-label" data-i18n="detailNotesLabel">THE FLAVOR NOTES</span>
+      <p id="dialog-notes" class="detail-notes"></p>
+    </section>
+
+    <section class="detail-information">
+      <article>
+        <span class="tiny-label" data-i18n="detailRitualLabel">A LITTLE RITUAL</span>
+        <h3 data-i18n="detailRitualHeading">Good company.</h3>
+        <p id="dialog-pairing"></p>
+      </article>
+      <article>
+        <span class="tiny-label" data-i18n="detailRecipeLabel">THE CONCEPT RECIPE</span>
+        <h3 data-i18n="detailRecipeHeading">Simply imagined.</h3>
+        <p id="dialog-ingredients"></p>
+      </article>
+      <article>
+        <span class="tiny-label" data-i18n="detailPerspectiveLabel">A LITTLE PERSPECTIVE</span>
+        <h3 data-i18n="detailPerspectiveHeading">Just for inspiration.</h3>
+        <p id="dialog-perspective">240 g concept jar. This is a fictional product presentation, with no sales or nutritional claims.</p>
+      </article>
+    </section>
+
+    <section class="detail-related">
+      <span class="tiny-label" data-i18n="detailRelatedLabel">ANOTHER SPOONFUL OF SUNSHINE?</span>
+      <h3 data-i18n-html="detailRelatedHeading">Meet the rest<br>of the orchard.</h3>
+      <div class="detail-related-grid">
+        <button type="button" data-detail-product="0">
+          <img src="assets/images/jar-orange.png" alt="" width="1217" height="1292" loading="lazy" decoding="async">
+          <span>Golden orange</span>
+        </button>
+        <button type="button" data-detail-product="1">
+          <img src="assets/images/jar-lemon.png" alt="" width="1176" height="1338" loading="lazy" decoding="async">
+          <span>Lemon &amp; vanilla</span>
+        </button>
+        <button type="button" data-detail-product="2">
+          <img src="assets/images/jar-fig.png" alt="" width="1184" height="1328" loading="lazy" decoding="async">
+          <span>Wild fig</span>
+        </button>
+        <button type="button" data-detail-product="3">
+          <img src="assets/images/jar-blood-orange.png" alt="" width="1199" height="1312" loading="lazy" decoding="async">
+          <span>Blood orange</span>
+        </button>
+        <button type="button" data-detail-product="4">
+          <img src="assets/images/jar-apricot.png" alt="" width="1199" height="1312" loading="lazy" decoding="async">
+          <span>Apricot &amp; rosemary</span>
+        </button>
+      </div>
+    </section>
+  </dialog>
+
+  <dialog id="privacy-dialog" aria-labelledby="privacy-title">
+    <button class="dialog-close" type="button" aria-label="Close privacy information">
+      <span class="dialog-close-label" data-i18n="privacyClose">close</span>
+      <span aria-hidden="true">×</span>
+    </button>
+    <div class="privacy-content">
+      <span class="tiny-label" data-i18n="privacyEyebrow">THE SIMPLE VERSION</span>
+      <h2 id="privacy-title" data-i18n="privacyTitle">Your privacy.</h2>
+      <p data-i18n="privacyP1">This concept website uses no analytics, advertising, tracking cookies, or forms that send personal information. Its interactions run in your browser.</p>
+      <p data-i18n="privacyP2">Fonts are loaded from Google Fonts. Your browser contacts that service to display them; system fonts are used if the service is unavailable.</p>
+      <p data-i18n="privacyP3">No purchases, subscriptions, or account registrations are offered.</p>
+    </div>
+  </dialog>
+</body>
+</html>

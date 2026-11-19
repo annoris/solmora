@@ -1,0 +1,20 @@
+{
+  "name": "solmora-orchard-preserves",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An original Mediterranean pantry website for SOLMORA orchard preserves.",
+  "license": "MIT",
+  "homepage": "https://annoris.github.io/solmora/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/annoris/solmora.git"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "check": "node scripts/validate.mjs",
+    "screenshots": "node scripts/capture-screenshots.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

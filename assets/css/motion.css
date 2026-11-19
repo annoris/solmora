@@ -1,0 +1,260 @@
+/* Motion has its own layer so the editorial layout remains readable without JS. */
+
+html,
+body {
+  overflow-x: clip;
+}
+
+.jar-orbit.is-orbit-ready {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  left: 0;
+  top: 0;
+  transform: none;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.jar-orbit.is-dragging {
+  cursor: grabbing;
+}
+
+.is-orbit-ready .jar-item {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  width: var(--jar-width, 180px);
+  height: calc(var(--jar-width, 196px) * 1.53);
+  margin: 0;
+  transform-origin: 50% 50%;
+  will-change: transform;
+  touch-action: pan-y;
+}
+
+.is-orbit-ready .jar-item .jar {
+  transform: perspective(900px) rotateY(var(--jar-turn, 0deg));
+  transition: transform 0.25s ease-out;
+}
+
+/* Fallback static fan when JS has not initialized the orbit */
+.jar-orbit:not(.is-orbit-ready) .jar-item:nth-child(5n + 1) {
+  transform: translateX(-360px) rotate(-12deg);
+}
+
+.jar-orbit:not(.is-orbit-ready) .jar-item:nth-child(5n + 2) {
+  transform: translateX(-180px) rotate(5deg);
+}
+
+.jar-orbit:not(.is-orbit-ready) .jar-item:nth-child(5n + 3) {
+  transform: translateX(0) rotate(-3deg);
+}
+
+.jar-orbit:not(.is-orbit-ready) .jar-item:nth-child(5n + 4) {
+  transform: translateX(180px) rotate(8deg);
+}
+
+.jar-orbit:not(.is-orbit-ready) .jar-item:nth-child(5n + 5) {
+  transform: translateX(360px) rotate(15deg);
+}
+
+.orbit-seal {
+  transform-origin: center;
+  will-change: transform;
+}
+
+.hero-shape {
+  translate: var(--shape-x, 0px) var(--shape-y, 0px);
+}
+
+.orchard-art {
+  transform: translate3d(0, var(--parallax-y, 0px), 0) rotate(-3deg);
+  will-change: transform;
+}
+
+.detail-hero > h2 {
+  transform: translate3d(0, calc(-50% + var(--detail-shift, 0px) * -0.45), 0);
+}
+
+.detail-product {
+  transform: translate3d(-50%, calc(-50% + var(--detail-shift, 0px)), 0) rotate(-7deg);
+}
+
+.ink-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0.14em 0 0.12em;
+  margin: -0.14em 0 -0.12em;
+}
+
+.ink-char {
+  display: inline-block;
+}
+
+@media (max-width: 650px) {
+  .is-orbit-ready .jar-item {
+    top: 48%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .slow-track {
+    animation: slow-drift 28s linear infinite;
+  }
+
+  .is-motion-ready .hero-shape {
+    animation: shape-emerge 1.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .is-motion-ready .orbit-seal {
+    animation: seal-emerge 1.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .is-motion-ready .jar-item .jar {
+    animation: jar-emerge 1.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .is-motion-ready .jar-item:nth-child(2n) .jar {
+    animation-delay: 0.1s;
+  }
+
+  .is-motion-ready .jar-item:nth-child(3n) .jar {
+    animation-delay: 0.18s;
+  }
+
+  .detail-product img {
+    animation: detail-lift 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .has-motion [data-reveal]:not(.ink-reveal) {
+    opacity: 0;
+    translate: 0 28px;
+    transition: opacity 0.7s ease, translate 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .has-motion [data-reveal].is-revealed {
+    opacity: 1;
+    translate: none;
+  }
+
+  .has-motion .ink-reveal .ink-char {
+    transform: translateY(108%);
+    transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1) var(--ink-delay);
+  }
+
+  .has-motion .ink-reveal.is-revealed .ink-char {
+    transform: translateY(0);
+  }
+
+  #orbit-prev,
+  #orbit-next,
+  #dialog-prev,
+  #dialog-next {
+    transition: scale 0.25s ease, background-color 0.25s ease;
+  }
+
+  #orbit-prev:hover,
+  #orbit-next:hover,
+  #dialog-prev:hover,
+  #dialog-next:hover {
+    scale: 1.08;
+  }
+}
+
+@keyframes slow-drift {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shape-emerge {
+  from {
+    opacity: 0;
+    scale: 0.96;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes seal-emerge {
+  from {
+    opacity: 0;
+    scale: 0.9;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes jar-emerge {
+  from {
+    opacity: 0;
+    translate: 0 56px;
+    scale: 0.9;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+@keyframes detail-lift {
+  from {
+    opacity: 0;
+    translate: 0 100px;
+    rotate: 12deg;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    rotate: 0deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal],
+  .ink-char {
+    opacity: 1 !important;
+    translate: none !important;
+  }
+
+  .ink-char {
+    transform: none !important;
+  }
+
+  .hero-shape {
+    translate: none;
+  }
+
+  .orchard-art {
+    --parallax-y: 0px;
+    transform: rotate(-3deg);
+  }
+
+  .detail-hero > h2 {
+    --detail-shift: 0px;
+    transform: translateY(-50%);
+  }
+
+  .detail-product {
+    --detail-shift: 0px;
+    transform: translate(-50%, -50%) rotate(-7deg);
+  }
+}

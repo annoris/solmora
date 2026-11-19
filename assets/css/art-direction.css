@@ -1,0 +1,693 @@
+/* SOLMORA editorial art direction: hero composition, studio cutouts, photography, and fullscreen preserve stories. */
+
+/* Hero editorial composition */
+.orbit-seal {
+  position: absolute;
+  width: clamp(460px, 52vw, 750px);
+  max-width: none;
+  height: auto;
+  top: 88%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--orange);
+  opacity: 1;
+  z-index: 0;
+}
+
+.orbit-seal text {
+  font-family: var(--serif);
+  font-size: 68px;
+  letter-spacing: -0.01em;
+  fill: currentColor;
+}
+
+.hero-shape {
+  position: absolute;
+  left: 12%;
+  width: 78%;
+  height: 70%;
+  bottom: -16%;
+  color: var(--wine);
+  z-index: -1;
+}
+
+.hero-shape svg {
+  width: 100%;
+  height: 100%;
+}
+
+.orbit-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.jar-orbit {
+  position: absolute;
+  left: 50%;
+  top: 49%;
+  width: 100%;
+  height: 370px;
+  transform: translate(-50%, -50%) rotate(-10deg);
+  touch-action: pan-y;
+  pointer-events: auto;
+  cursor: grab;
+}
+
+.jar-item {
+  background: none;
+  width: 196px;
+  height: 300px;
+  padding: 0;
+  position: absolute;
+  left: calc(50% - 98px);
+  top: 20px;
+  transform-origin: 50% 85%;
+  will-change: transform;
+  outline-offset: 10px;
+}
+
+.jar.product-asset {
+  background: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.product-cutout {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(9px 18px 10px rgba(118, 37, 48, 0.1));
+}
+
+/* Desktop corners sit over --cream outside .hero-shape */
+.hero-product {
+  position: absolute;
+  left: 3.4%;
+  bottom: 4.5%;
+  max-width: clamp(150px, 14.5vw, 220px);
+  text-align: left;
+  z-index: 4;
+  color: var(--wine);
+  pointer-events: none;
+}
+
+.hero-product .tiny-label {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.hero-product h2 {
+  font-size: clamp(22px, 2.2vw, 32px);
+  line-height: 1.05;
+  margin: 7px 0 5px;
+}
+
+.hero-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.orbit-controls {
+  position: absolute;
+  right: 3.4%;
+  bottom: 4.5%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 5;
+  color: var(--wine);
+  font-size: 13px;
+}
+
+.orbit-controls button {
+  background: transparent;
+  padding: 8px 4px;
+  font-size: 13px;
+}
+
+.control-line {
+  width: clamp(24px, 3vw, 44px);
+  height: 1px;
+  background: currentColor;
+}
+
+.scroll-prompt {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  font-family: var(--serif);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 12px;
+  color: var(--cream);
+  white-space: nowrap;
+}
+
+/* Pantry studio cutouts */
+.product-card .card-art {
+  background: none;
+  aspect-ratio: 1 / 1.22;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.product-card .card-art > img {
+  height: 100%;
+  width: 100%;
+  padding: 0 5%;
+  object-fit: contain;
+  z-index: 1;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: drop-shadow(12px 20px 9px rgba(118, 37, 48, 0.1));
+}
+
+.product-card:hover .card-art > img {
+  transform: rotate(-12deg) scale(1.08);
+}
+
+.product-card .card-orbit {
+  position: absolute;
+  inset: 15% 1%;
+  border: 1px solid rgba(118, 37, 48, 0.2);
+  border-radius: 50%;
+  transform: rotate(20deg);
+  opacity: 0.45;
+  z-index: -1;
+}
+
+.product-card .card-orbit::after {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(118, 37, 48, 0.13);
+  border-radius: 50%;
+}
+
+/* Editorial orchard and borderless ritual imagery */
+.orchard-art > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 47% 47% 0 0;
+}
+
+.ritual-art > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Refined concept disclosure card in contact section */
+.contact-message {
+  max-width: 520px;
+  margin: 28px auto 0;
+  padding: 22px 28px;
+  border-radius: 14px;
+  border: 1px solid rgba(253, 243, 235, 0.36);
+  background: rgba(253, 243, 235, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--cream);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.contact-message .tiny-label {
+  color: #f8a14e;
+  margin-bottom: 8px;
+  font-size: 10px;
+}
+
+/* Fullscreen editorial product detail dialog */
+.product-detail {
+  position: fixed;
+  inset: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw;
+  max-width: none;
+  max-height: 100svh;
+  height: 100svh;
+  border-radius: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--cream);
+}
+
+.product-detail[open] {
+  display: block;
+}
+
+.product-detail > .dialog-close {
+  position: fixed;
+  right: 30px;
+  top: 20px;
+  z-index: 5;
+  background: var(--cream);
+  border-radius: 40px;
+  padding: 8px 18px;
+  border: 1px solid rgba(118, 37, 48, 0.27);
+  font-size: 12px;
+}
+
+.detail-hero {
+  height: 100svh;
+  min-height: 760px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  --detail-shift: 0px;
+}
+
+.detail-brand {
+  position: absolute;
+  left: 35px;
+  top: 23px;
+  font-family: var(--serif);
+  font-size: 40px;
+  letter-spacing: -0.06em;
+}
+
+.detail-hero > h2 {
+  position: absolute;
+  top: 23%;
+  left: 3%;
+  width: 94%;
+  font-family: var(--serif);
+  font-size: clamp(78px, 11.2vw, 185px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--orange);
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.detail-product {
+  position: absolute;
+  width: clamp(290px, 26vw, 370px);
+  height: clamp(360px, 50svh, 480px);
+  left: 50%;
+  top: 56%;
+  transform: translate(-50%, -50%) rotate(-7deg);
+}
+
+.detail-product img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(20px 25px 13px rgba(118, 37, 48, 0.15));
+}
+
+.detail-meta {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 58%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  font-family: var(--serif);
+  font-size: 25px;
+  letter-spacing: -0.02em;
+}
+
+.detail-meta > span:first-child,
+.detail-meta > span:last-child {
+  max-width: 190px;
+}
+
+.detail-meta > span:nth-child(2) {
+  display: none;
+}
+
+.detail-nav {
+  position: absolute;
+  right: 4%;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 4;
+  color: var(--wine);
+  font-size: 13px;
+}
+
+.detail-nav button {
+  background: transparent;
+  padding: 8px 4px;
+  font-size: 13px;
+}
+
+.detail-scroll {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.detail-story {
+  text-align: center;
+  padding: 80px 15% 90px;
+}
+
+.detail-diamond {
+  display: block;
+  font-size: 45px;
+  margin-bottom: 35px;
+  color: var(--orange);
+}
+
+.detail-story > p:first-of-type {
+  font-family: var(--serif);
+  font-size: clamp(32px, 3.7vw, 60px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 55px;
+}
+
+.detail-story > .tiny-label {
+  margin-bottom: 18px;
+}
+
+.detail-notes {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.detail-information {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+  padding: 0 6% 90px;
+}
+
+.detail-information article {
+  border-top: 1px solid rgba(118, 37, 48, 0.34);
+  padding-top: 25px;
+}
+
+.detail-information h3 {
+  font-size: 34px;
+  margin: 25px 0 20px;
+}
+
+.detail-information p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.detail-related {
+  background: var(--sand);
+  padding: 70px 5% 80px;
+  text-align: center;
+}
+
+.detail-related h3 {
+  font-size: 70px;
+  line-height: 1;
+  margin: 25px 0 50px;
+}
+
+.detail-related-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.detail-related-grid button {
+  padding: 12px 8px 14px;
+  border-radius: 12px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.detail-related-grid button.is-active {
+  background: rgba(118, 37, 48, 0.06);
+  box-shadow: inset 0 -2px 0 var(--orange);
+}
+
+.detail-related-grid button.is-active span {
+  color: var(--orange);
+}
+
+.detail-related-grid img {
+  height: 240px;
+  width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(8px 10px 8px rgba(118, 37, 48, 0.13));
+  transition: transform 0.5s ease;
+}
+
+.detail-related-grid button:hover img,
+.detail-related-grid button.is-active img {
+  transform: translateY(-10px) rotate(-5deg);
+}
+
+.detail-related-grid span {
+  font: 24px / 1.2 var(--serif);
+  margin-top: 15px;
+}
+
+/* Wide desktop */
+@media (min-width: 1600px) {
+  .jar-item {
+    width: 240px;
+    height: 365px;
+    left: calc(50% - 120px);
+  }
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .orbit-seal {
+    width: clamp(360px, 50vw, 520px);
+    top: 89%;
+  }
+
+  .hero-shape {
+    left: 16%;
+    width: 68%;
+  }
+
+  .hero-product {
+    max-width: 155px;
+  }
+
+  .hero-product h2 {
+    font-size: 24px;
+  }
+
+  .detail-product {
+    width: clamp(260px, 34vw, 330px);
+    height: clamp(320px, 46svh, 430px);
+  }
+
+  .detail-meta {
+    font-size: 20px;
+  }
+
+  .detail-related-grid img {
+    height: 180px;
+  }
+
+  .detail-related-grid span {
+    font-size: 21px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .hero-shape {
+    width: 136%;
+    left: -18%;
+    height: 58%;
+    bottom: -7%;
+  }
+
+  .orbit-seal {
+    width: 140vw;
+    top: 90%;
+  }
+
+  .orbit-seal text {
+    font-size: 66px;
+  }
+
+  .jar-orbit {
+    top: 48%;
+    height: 250px;
+    transform: translate(-50%, -50%) rotate(-10deg);
+  }
+
+  .jar-item {
+    width: 125px;
+    height: 195px;
+    left: calc(50% - 62.5px);
+    top: 10px;
+  }
+
+  .hero-product {
+    left: 6%;
+    bottom: 13%;
+    max-width: 190px;
+    color: var(--cream);
+  }
+
+  .hero-product .tiny-label {
+    font-size: 8px;
+  }
+
+  .hero-product h2 {
+    font-size: 27px;
+    margin: 5px 0 4px;
+  }
+
+  .hero-product p {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .orbit-controls {
+    bottom: 8%;
+    right: 6%;
+    gap: 6px;
+    color: var(--cream);
+    font-size: 11px;
+  }
+
+  .orbit-controls button {
+    font-size: 12px;
+  }
+
+  .control-line {
+    width: 24px;
+  }
+
+  .scroll-prompt {
+    left: 50%;
+    bottom: 20px;
+    font-size: 11px;
+    color: var(--cream);
+  }
+
+  .contact-message {
+    padding: 18px 20px;
+    font-size: 14px;
+  }
+
+  .detail-hero {
+    height: 100svh;
+    min-height: 640px;
+  }
+
+  .detail-brand {
+    left: 20px;
+    font-size: 35px;
+  }
+
+  .product-detail > .dialog-close {
+    right: 15px;
+    top: 15px;
+    padding: 5px 12px;
+    font-size: 10px;
+  }
+
+  .detail-hero > h2 {
+    top: 22%;
+    font-size: clamp(46px, 15vw, 90px);
+    line-height: 0.9;
+  }
+
+  .detail-product {
+    top: 53%;
+    width: min(74vw, 280px);
+    height: clamp(270px, 43svh, 390px);
+  }
+
+  .detail-meta {
+    top: 80%;
+    font-size: 16px;
+    left: 6%;
+    right: 6%;
+  }
+
+  .detail-meta > span:first-child,
+  .detail-meta > span:last-child {
+    max-width: 125px;
+  }
+
+  .detail-scroll {
+    left: 6%;
+    transform: none;
+    bottom: 26px;
+    font-size: 11px;
+  }
+
+  .detail-nav {
+    right: 6%;
+    bottom: 18px;
+    gap: 6px;
+  }
+
+  .detail-story {
+    padding: 55px 7% 65px;
+  }
+
+  .detail-story > p:first-of-type {
+    font-size: 34px;
+    margin-bottom: 40px;
+  }
+
+  .detail-notes {
+    font-size: 14px;
+  }
+
+  .detail-information {
+    grid-template-columns: 1fr;
+    padding: 0 7% 60px;
+    gap: 35px;
+  }
+
+  .detail-information h3 {
+    font-size: 32px;
+    margin: 17px 0;
+  }
+
+  .detail-related {
+    padding: 55px 6%;
+  }
+
+  .detail-related h3 {
+    font-size: 52px;
+  }
+
+  .detail-related-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 15px;
+  }
+
+  .detail-related-grid img {
+    height: 210px;
+  }
+
+  .detail-related-grid span {
+    font-size: 22px;
+  }
+}
