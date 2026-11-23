@@ -15,6 +15,10 @@
 
 [**Live Showcase (GitHub Pages)**](https://annoris.github.io/solmora/) · [Visual Walkthrough](#visual-page-walkthrough) · [Product Gallery](#product--original-imagery-gallery) · [Design System](#visual-system-typography--motion) · [Local Setup](#running-locally-validation--screenshot-capture)
 
+<br />
+
+<img src="docs/screenshots/solmora-demo.gif" alt="SOLMORA live UI tour — inclined jar orbit, pantry collection, orchard editorial, product story modal, and fullscreen navigation" width="100%" />
+
 </div>
 
 ---
@@ -45,6 +49,17 @@
 - **Fullscreen Product Story Dialog (`#product-dialog`):** Native `<dialog>` modal styled as a full-bleed editorial product page with giant background display type, scroll-linked jar parallax (`--detail-shift`), tasting notes, pairing rituals, concept recipes, related jar switcher, `Escape` closing, and shareable URL hash deep-linking (`#product=<slug>`).
 - **Editorial Scroll Choreography (`motion.js`):** Per-character clipped-mask headline entrances (`.ink-reveal`), intersection-triggered section reveals (`[data-reveal]`), smooth vertical scroll parallax (`[data-parallax]`) on orchard photography, and an endless CSS marquee banner (`.slow-banner`).
 - **Accessible & Resilient by Design:** Skip link, semantic landmarks, `inert` background locking when the fullscreen drawer opens, `44px` minimum touch targets (`accessibility.css`), high-contrast `:focus-visible` rings, static CSS fallback when JavaScript is unavailable, and complete `@media (prefers-reduced-motion: reduce)` support.
+
+### Why Buildless? (SOLMORA vs. Heavy Frontend Stacks)
+
+| Capability | SOLMORA (Buildless HTML5 / CSS3 / Vanilla JS) | Typical Framework + Bundler Template |
+| :--- | :---: | :---: |
+| **Runtime Dependencies** | **0 packages** (`node_modules` not required) | 500–1,500+ packages |
+| **Build Step / Cold Start** | **Instant** (serves `index.html` directly) | Vite / Webpack / Next.js compile step |
+| **Physics-Driven Carousel** | Custom `requestAnimationFrame` spring-damper | External carousel library + polyfills |
+| **Fullscreen Product Modals** | Native HTML `<dialog>` + URL hash routing | Custom portal + focus-trap dependency |
+| **Accessibility & Reduced Motion** | Built-in `inert`, `44px` targets, no-JS fallback | Often requires extra plugins |
+| **Static Hosting** | Push to `main` → live on GitHub Pages | CI build pipeline + artifact upload |
 
 ---
 
@@ -328,3 +343,11 @@ SOLMORA is a pure static site served directly from the repository root (`/` on `
 - [Original Image Art-Direction Prompts](docs/asset-prompts.md)
 - [Screenshot Suite Guide](docs/screenshots/README.md)
 - Released under the [MIT License](LICENSE).
+
+---
+
+## More Projects by Annoris
+
+- [**Aetheris**](https://github.com/annoris/aetheris) — Zero-dependency AI Agent & Automation Platform (77 specialized agents, 328 workflow skills, MCP & hooks dashboard for Claude Code, Cursor & Codex)
+- [**TabVento**](https://github.com/annoris/tabvento) — Modern browser tab & workspace organizer built for focus and speed
+- [**Aurelia**](https://github.com/annoris/aurelia) — Refined web experience and design showcase by Annoris
