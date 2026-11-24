@@ -6,6 +6,9 @@
 
 **A little sun, preserved.** — An editorial concept showcase for small-batch Mediterranean marmalades and orchard preserves, crafted with buildless HTML5, CSS3, and vanilla JavaScript.
 
+[![Launch Live Showcase](https://img.shields.io/badge/%F0%9F%9A%80_LAUNCH_LIVE_SHOWCASE-annoris.github.io%2Fsolmora-e94e1b?style=for-the-badge&logo=githubpages&logoColor=fdf3eb&labelColor=2b1014)](https://annoris.github.io/solmora/)
+<br/>
+
 [![HTML5](https://img.shields.io/badge/HTML5-Semantic%20Markup-e94e1b?style=flat-square&logo=html5&logoColor=fdf3eb)](#technical-architecture--project-structure)
 [![CSS3](https://img.shields.io/badge/CSS3-Art%20Direction%20%26%20Motion-762530?style=flat-square&logo=css3&logoColor=fdf3eb)](#visual-system-typography--motion)
 [![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla%20ES%20Modules-f39200?style=flat-square&logo=javascript&logoColor=2b1014)](#technical-architecture--project-structure)
@@ -351,3 +354,32 @@ SOLMORA is a pure static site served directly from the repository root (`/` on `
 - [**Aetheris**](https://github.com/annoris/aetheris) — Zero-dependency AI Agent & Automation Platform (77 specialized agents, 328 workflow skills, MCP & hooks dashboard for Claude Code, Cursor & Codex)
 - [**TabVento**](https://github.com/annoris/tabvento) — Modern browser tab & workspace organizer built for focus and speed
 - [**Aurelia**](https://github.com/annoris/aurelia) — Refined web experience and design showcase by Annoris
+
+---
+
+## 🌐 Explore the JAP INTERNATIONAL & Annoris Ecosystem
+
+Built by **JAP INTERNATIONAL** — Local-First AI Automation Platforms for Small & Medium Businesses (SMBs), agencies, clinics, e-commerce, and enterprise teams, alongside 60 FPS Creative Web Engineering showcases. Every project below includes an instant **Live Demo (zero login required)**.
+
+### 🤖 AI & Local-First Business Automation
+| Project | What It Solves | Stack | Live Demo |
+| :--- | :--- | :--- | :---: |
+| [**`aetheris`**](https://github.com/annoris/aetheris) | 77 AI Agents, 328 Skills & Local-First Automation Control Plane | Bun · Node · Ollama · MCP | [Live Demo ↗](https://annoris.github.io/aetheris/) |
+| [**`aurelia`**](https://github.com/annoris/aurelia) | Self-Hosted Business AI Automation, RAG, Workflows & Local CRM | React 18 · Express · Prisma | [Live Demo ↗](https://annoris.github.io/aurelia/) |
+| [**`lumenpitch`**](https://github.com/annoris/lumenpitch) | AI Presentation Studio & Multi-LLM Slide Generation Engine | Next.js 16 · FastAPI · Electron | [Live Demo ↗](https://annoris.github.io/lumenpitch/) |
+| [**`tabvento`**](https://github.com/annoris/tabvento) | Autonomous AI Browser Automation Dashboard (Local-First BYOK) | Python · Playwright · SQLite | [Live Demo ↗](https://annoris.github.io/tabvento/) |
+| [**`trading-bauhaus-journal`**](https://github.com/annoris/trading-bauhaus-journal) | AI Trading Journal with Claude/OpenAI Analyst & OHLC Replay | Next.js 15 · TypeScript · SQLite | [Live Demo ↗](https://annoris.github.io/trading-bauhaus-journal/) |
+
+### 🎨 Creative Engineering & 60 FPS Web Showcases
+| Project | Experience & Motion Engineering | Stack | Live Demo |
+| :--- | :--- | :--- | :---: |
+| [**`kairo`**](https://github.com/annoris/kairo) | 60 FPS Spatial Web: Navier-Stokes Fluid, GLSL Shaders & Rapier 3D | Next.js 14 · Three.js · GLSL | [Live Demo ↗](https://annoris.github.io/kairo/) |
+| [**`valence`**](https://github.com/annoris/valence) | Zero-Bundler 60 FPS Awwwards Agency Template (MIT) | HTML5 · CSS3 · GSAP · Lenis | [Live Demo ↗](https://annoris.github.io/valence/) |
+| [**`luma`**](https://github.com/annoris/luma) | Zero-Dependency Botanical Brand Experience + 106 BPM Web Audio Synth | HTML5 · CSS3 · Web Audio API | [Live Demo ↗](https://annoris.github.io/luma/) |
+| [**`valtor`**](https://github.com/annoris/valtor) | Luxury Automotive Digital Flagship — 60 FPS GSAP + SplitText | Vite · ES Modules · GSAP | [Live Demo ↗](https://annoris.github.io/valtor/) |
+| [**`solterra`**](https://github.com/annoris/solterra) | Luxury Desert Architecture Showcase — GSAP ScrollSmoother | React 19 · Vite 6 · Tailwind 4 | [Live Demo ↗](https://annoris.github.io/solterra/) |
+| [**`moxie`**](https://github.com/annoris/moxie) | Bold Social-First Creative Agency Experience — GSAP Inertia | Next.js 15 · React 19 · Lenis | [Live Demo ↗](https://annoris.github.io/moxie/) |
+| [**`kineta`**](https://github.com/annoris/kineta) | Locked-60fps Brutalist Editorial Showcase & Variable Font Physics | Vanilla JS · GSAP · Lenis | [Live Demo ↗](https://annoris.github.io/kineta/) |
+| **`solmora`** *(You are here)* | Editorial Mediterranean E-Commerce Showcase (MIT, Zero-Deps) | HTML5 · CSS3 · Vanilla JS | [Live Demo ↗](https://annoris.github.io/solmora/) |
+
+> ⭐ **Enjoyed exploring this project?** Drop a **Star** on GitHub and check out the full portfolio at [**github.com/annoris**](https://github.com/annoris) — it helps other builders discover the ecosystem!
